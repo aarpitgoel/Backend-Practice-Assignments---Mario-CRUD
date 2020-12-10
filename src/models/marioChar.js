@@ -1,19 +1,16 @@
-const mongoose = require("mongoose");
-// const Schema=mongoose.Schema()
+const mongoose = require('mongoose');
 
 //  Your code goes here
+const marioModel = new mongoose.Schema({
+    name: {
+        type: String,
+        required: true,
+    },
+    weight:{
+        type: Number,
+        required: true,
+    }
+})
 
-const mario = new mongoose.Schema({
-  name: {
-    type: String,
-    required: false
-  },
-  weight: {
-    type: Number,
-    required: false
-  }
-});
 
-const marioModel = mongoose.model("marioModel", mario);
-
-module.exports = marioModel;
+module.exports = mongoose.model("mariochar", marioModel);
